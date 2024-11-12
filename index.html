@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verb Tense Practice</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .exercise {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .exercise p {
+            font-size: 16px;
+        }
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Verb Tense Practice</h1>
+
+    <!-- Exercise 1 -->
+    <div class="exercise">
+        <p>1. Every time Luca <select id="ex1">
+            <option value="">--Choose--</option>
+            <option value="visits">visits</option>
+            <option value="is visiting">is visiting</option>
+            <option value="has visited">has visited</option>
+            <option value="visited">visited</option>
+            <option value="has been visiting">has been visiting</option>
+            <option value="was visiting">was visiting</option>
+            <option value="had visited">had visited</option>
+            <option value="had been visiting">had been visiting</option>
+        </select> London, he always goes to see Big Ben.</p>
+        <button onclick="checkAnswer('ex1', 'visits', 'feedback1')">Check</button>
+        <p id="feedback1" class="feedback"></p>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="exercise">
+        <p>2. Look, it <select id="ex2">
+            <option value="">--Choose--</option>
+            <option value="snows">snows</option>
+            <option value="is snowing">is snowing</option>
+            <option value="has snowed">has snowed</option>
+            <option value="snowed">snowed</option>
+            <option value="had snowed">had snowed</option>
+            <option value="had been snowing">had been snowing</option>
+            <option value="was snowing">was snowing</option>
+            <option value="is being snowed">is being snowed</option>
+        </select> outside! It hasn’t snowed like this in years.</p>
+        <button onclick="checkAnswer('ex2', 'is snowing', 'feedback2')">Check</button>
+        <p id="feedback2" class="feedback"></p>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="exercise">
+        <p>3. I <select id="ex3">
+            <option value="">--Choose--</option>
+            <option value="never see">never see</option>
+            <option value="have never seen">have never seen</option>
+            <option value="am never seeing">am never seeing</option>
+            <option value="never saw">never saw</option>
+            <option value="had never seen">had never seen</option>
+            <option value="had never been seeing">had never been seeing</option>
+            <option value="was never seeing">was never seeing</option>
+            <option value="is never seeing">is never seeing</option>
+        </select> such an exciting movie.</p>
+        <button onclick="checkAnswer('ex3', 'have never seen', 'feedback3')">Check</button>
+        <p id="feedback3" class="feedback"></p>
+    </div>
+
+    <!-- Exercise 4 -->
+    <div class="exercise">
+        <p>4. Recently, she <select id="ex4">
+            <option value="">--Choose--</option>
+            <option value="has been working">has been working</option>
+            <option value="is working">is working</option>
+            <option value="works">works</option>
+            <option value="has worked">has worked</option>
+            <option value="had worked">had worked</option>
+            <option value="had been working">had been working</option>
+            <option value="was working">was working</option>
+            <option value="is being worked">is being worked</option>
+        </select> nonstop to finish the project.</p>
+        <button onclick="checkAnswer('ex4', 'has been working', 'feedback4')">Check</button>
+        <p id="feedback4" class="feedback"></p>
+    </div>
+
+    <!-- Exercise 5 -->
+    <div class="exercise">
+        <p>5. While we <select id="ex5">
+            <option value="">--Choose--</option>
+            <option value="had been driving">had been driving</option>
+            <option value="were driving">were driving</option>
+            <option value="drove">drove</option>
+            <option value="have driven">have driven</option>
+            <option value="had driven">had driven</option>
+            <option value="are driving">are driving</option>
+            <option value="will drive">will drive</option>
+            <option value="had been driven">had been driven</option>
+        </select> home, we noticed a double rainbow.</p>
+        <button onclick="checkAnswer('ex5', 'had been driving', 'feedback5')">Check</button>
+        <p id="feedback5" class="feedback"></p>
+    </div>
+
+    <!-- Exercise 6 -->
+    <div class="exercise">
+        <p>6. When Laura <select id="ex6">
+            <option value="">--Choose--</option>
+            <option value="arrived">arrived</option>
+            <option value="had arrived">had arrived</option>
+            <option value="was arriving">was arriving</option>
+            <option value="arrives">arrives</option>
+            <option value="had been arriving">had been arriving</option>
+            <option value="will arrive">will arrive</option>
+            <option value="had been arrived">had been arrived</option>
+            <option value="arriving">arriving</option>
+        </select>, we had already left the restaurant.</p>
+        <button onclick="checkAnswer('ex6', 'had arrived', 'feedback6')">Check</button>
+        <p id="feedback6" class="feedback"></p>
+    </div>
+
+<!-- Exercise 7 -->
+<div class="exercise">
+    <p>7. I <select id="ex7">
+        <option value="">--Choose--</option>
+        <option value="have been working">have been working</option>
+        <option value="am working">am working</option>
+        <option value="had worked">had worked</option>
+        <option value="was working">was working</option>
+        <option value="have worked">have worked</option>
+        <option value="worked">worked</option>
+        <option value="will work">will work</option>
+        <option value="will have worked">will have worked</option>
+    </select> on this project all week.</p>
+    <button onclick="checkAnswer('ex7', 'have been working', 'feedback7')">Check</button>
+    <p id="feedback7" class="feedback"></p>
+</div>
+
+<!-- Exercise 8 -->
+<div class="exercise">
+    <p>8. She <select id="ex8">
+        <option value="">--Choose--</option>
+        <option value="has worked">has worked</option>
+        <option value="is working">is working</option>
+        <option value="had worked">had worked</option>
+        <option value="will work">will work</option>
+        <option value="will have worked">will have worked</option>
+        <option value="works">works</option>
+        <option value="was working">was working</option>
+        <option value="have worked">have worked</option>
+    </select> in this company for 10 years by the end of this year.</p>
+    <button onclick="checkAnswer('ex8', 'will have worked', 'feedback8')">Check</button>
+    <p id="feedback8" class="feedback"></p>
+</div>
+
+<!-- Exercise 9 -->
+<div class="exercise">
+    <p>9. By the time we arrive, they <select id="ex9">
+        <option value="">--Choose--</option>
+        <option value="will have left">will have left</option>
+        <option value="will leave">will leave</option>
+        <option value="had left">had left</option>
+        <option value="leave">leave</option>
+        <option value="are leaving">are leaving</option>
+        <option value="have left">have left</option>
+        <option value="had been leaving">had been leaving</option>
+        <option value="will have been leaving">will have been leaving</option>
+    </select> the office.</p>
+    <button onclick="checkAnswer('ex9', 'will have left', 'feedback9')">Check</button>
+    <p id="feedback9" class="feedback"></p>
+</div>
+
+<!-- Exercise 10 -->
+<div class="exercise">
+    <p>10. She <select id="ex10">
+        <option value="">--Choose--</option>
+        <option value="has been working">has been working</option>
+        <option value="was working">was working</option>
+        <option value="worked">worked</option>
+        <option value="had worked">had worked</option>
+        <option value="is working">is working</option>
+        <option value="will work">will work</option>
+        <option value="have worked">have worked</option>
+        <option value="will have worked">will have worked</option>
+    </select> on this project for two weeks when she completed it.</p>
+    <button onclick="checkAnswer('ex10', 'had worked', 'feedback10')">Check</button>
+    <p id="feedback10" class="feedback"></p>
+</div>
+
+<!-- Exercise 11 -->
+<div class="exercise">
+    <p>11. I <select id="ex11">
+        <option value="">--Choose--</option>
+        <option value="had been reading">had been reading</option>
+        <option value="am reading">am reading</option>
+        <option value="have read">have read</option>
+        <option value="read">read</option>
+        <option value="will be reading">will be reading</option>
+        <option value="will have read">will have read</option>
+        <option value="had read">had read</option>
+        <option value="is reading">is reading</option>
+    </select> the book when I heard the doorbell ring.</p>
+    <button onclick="checkAnswer('ex11', 'had been reading', 'feedback11')">Check</button>
+    <p id="feedback11" class="feedback"></p>
+</div>
+
+<!-- Exercise 12 -->
+<div class="exercise">
+    <p>12. They <select id="ex12">
+        <option value="">--Choose--</option>
+        <option value="had been studying">had been studying</option>
+        <option value="were studying">were studying</option>
+        <option value="studied">studied</option>
+        <option value="study">study</option>
+        <option value="have studied">have studied</option>
+        <option value="will study">will study</option>
+        <option value="had studied">had studied</option>
+        <option value="are studying">are studying</option>
+    </select> for hours when the teacher finally arrived.</p>
+    <button onclick="checkAnswer('ex12', 'had been studying', 'feedback12')">Check</button>
+    <p id="feedback12" class="feedback"></p>
+</div>
+
+<!-- Exercise 13 -->
+<div class="exercise">
+    <p>13. He <select id="ex13">
+        <option value="">--Choose--</option>
+        <option value="was eating">was eating</option>
+        <option value="is eating">is eating</option>
+        <option value="ate">ate</option>
+        <option value="had eaten">had eaten</option>
+        <option value="will eat">will eat</option>
+        <option value="eats">eats</option>
+        <option value="have eaten">have eaten</option>
+        <option value="will have eaten">will have eaten</option>
+    </select> his dinner when I called him.</p>
+    <button onclick="checkAnswer('ex13', 'was eating', 'feedback13')">Check</button>
+    <p id="feedback13" class="feedback"></p>
+</div>
+
+<!-- Exercise 14 -->
+<div class="exercise">
+    <p>14. By next month, I <select id="ex14">
+        <option value="">--Choose--</option>
+        <option value="will have finished">will have finished</option>
+        <option value="finish">finish</option>
+        <option value="had finished">had finished</option>
+        <option value="have finished">have finished</option>
+        <option value="finished">finished</option>
+        <option value="will finish">will finish</option>
+        <option value="will have been finishing">will have been finishing</option>
+        <option value="was finishing">was finishing</option>
+    </select> the report.</p>
+    <button onclick="checkAnswer('ex14', 'will have finished', 'feedback14')">Check</button>
+    <p id="feedback14" class="feedback"></p>
+</div>
+
+<!-- Exercise 15 -->
+<div class="exercise">
+    <p>15. We <select id="ex15">
+        <option value="">--Choose--</option>
+        <option value="have been traveling">have been traveling</option>
+        <option value="had traveled">had traveled</option>
+        <option value="travel">travel</option>
+        <option value="were traveling">were traveling</option>
+        <option value="will travel">will travel</option>
+        <option value="have traveled">have traveled</option>
+        <option value="will have traveled">will have traveled</option>
+        <option value="had been traveling">had been traveling</option>
+    </select> for hours before we found a hotel.</p>
+    <button onclick="checkAnswer('ex15', 'had traveled', 'feedback15')">Check</button>
+    <p id="feedback15" class="feedback"></p>
+</div>
+
+<!-- Exercise 16 -->
+<div class="exercise">
+    <p>16. I <select id="ex16">
+        <option value="">--Choose--</option>
+        <option value="had been reading">had been reading</option>
+        <option value="am reading">am reading</option>
+        <option value="read">read</option>
+        <option value="was reading">was reading</option>
+        <option value="have read">have read</option>
+        <option value="had read">had read</option>
+        <option value="will read">will read</option>
+        <option value="will have read">will have read</option>
+    </select> the book when I realized I left my keys at home.</p>
+    <button onclick="checkAnswer('ex16', 'had been reading', 'feedback16')">Check</button>
+    <p id="feedback16" class="feedback"></p>
+</div>
+
+<!-- Exercise 17 -->
+<div class="exercise">
+    <p>17. We <select id="ex17">
+        <option value="">--Choose--</option>
+        <option value="were walking">were walking</option>
+        <option value="walked">walked</option>
+        <option value="will walk">will walk</option>
+        <option value="will have walked">will have walked</option>
+        <option value="have walked">have walked</option>
+        <option value="had walked">had walked</option>
+        <option value="are walking">are walking</option>
+        <option value="had been walking">had been walking</option>
+    </select> to the park when we saw the rainbow.</p>
+    <button onclick="checkAnswer('ex17', 'were walking', 'feedback17')">Check</button>
+    <p id="feedback17" class="feedback"></p>
+</div>
+
+<!-- Exercise 18 -->
+<div class="exercise">
+    <p>18. By the time you arrive, they <select id="ex18">
+        <option value="">--Choose--</option>
+        <option value="will have left">will have left</option>
+        <option value="had left">had left</option>
+        <option value="leave">leave</option>
+        <option value="will leave">will leave</option>
+        <option value="are leaving">are leaving</option>
+        <option value="will be leaving">will be leaving</option>
+        <option value="have left">have left</option>
+        <option value="had been leaving">had been leaving</option>
+    </select> the office.</p>
+    <button onclick="checkAnswer('ex18', 'will have left', 'feedback18')">Check</button>
+    <p id="feedback18" class="feedback"></p>
+</div>
+
+<!-- Exercise 19 -->
+<div class="exercise">
+    <p>19. He <select id="ex19">
+        <option value="">--Choose--</option>
+        <option value="was eating">was eating</option>
+        <option value="is eating">is eating</option>
+        <option value="ate">ate</option>
+        <option value="have eaten">have eaten</option>
+        <option value="had eaten">had eaten</option>
+        <option value="eats">eats</option>
+        <option value="will eat">will eat</option>
+        <option value="will have eaten">will have eaten</option>
+    </select> dinner when I called.</p>
+    <button onclick="checkAnswer('ex19', 'was eating', 'feedback19')">Check</button>
+    <p id="feedback19" class="feedback"></p>
+</div>
+
+<!-- Exercise 20 -->
+<div class="exercise">
+    <p>20. By the end of the year, they <select id="ex20">
+        <option value="">--Choose--</option>
+        <option value="will have traveled">will have traveled</option>
+        <option value="had traveled">had traveled</option>
+        <option value="travel">travel</option>
+        <option value="were traveling">were traveling</option>
+        <option value="will travel">will travel</option>
+        <option value="have traveled">have traveled</option>
+        <option value="will have been traveling">will have been traveling</option>
+        <option value="had been traveling">had been traveling</option>
+    </select> to 10 different countries.</p>
+    <button onclick="checkAnswer('ex20', 'will have traveled', 'feedback20')">Check</button>
+    <p id="feedback20" class="feedback"></p>
+</div>
+
+<!-- Exercise 21 -->
+<div class="exercise">
+    <p>21. By this time tomorrow, she <select id="ex21">
+        <option value="">--Choose--</option>
+        <option value="will have completed">will have completed</option>
+        <option value="completed">completed</option>
+        <option value="have completed">have completed</option>
+        <option value="will complete">will complete</option>
+        <option value="had completed">had completed</option>
+        <option value="is completing">is completing</option>
+        <option value="was completing">was completing</option>
+        <option value="had been completing">had been completing</option>
+    </select> the project.</p>
+    <button onclick="checkAnswer('ex21', 'will have completed', 'feedback21')">Check</button>
+    <p id="feedback21" class="feedback"></p>
+</div>
+
+<!-- Exercise 22 -->
+<div class="exercise">
+    <p>22. When we arrived at the station, the train <select id="ex22">
+        <option value="">--Choose--</option>
+        <option value="had already left">had already left</option>
+        <option value="was leaving">was leaving</option>
+        <option value="leaves">leaves</option>
+        <option value="left">left</option>
+        <option value="will leave">will leave</option>
+        <option value="will have left">will have left</option>
+        <option value="had been leaving">had been leaving</option>
+        <option value="have left">have left</option>
+    </select> the station.</p>
+    <button onclick="checkAnswer('ex22', 'had already left', 'feedback22')">Check</button>
+    <p id="feedback22" class="feedback"></p>
+</div>
+
+<!-- Exercise 23 -->
+<div class="exercise">
+    <p>23. I <select id="ex23">
+        <option value="">--Choose--</option>
+        <option value="have been trying">have been trying</option>
+        <option value="was trying">was trying</option>
+        <option value="tried">tried</option>
+        <option value="have tried">have tried</option>
+        <option value="will try">will try</option>
+        <option value="had tried">had tried</option>
+        <option value="is trying">is trying</option>
+        <option value="had been trying">had been trying</option>
+    </select> to call you all day!</p>
+    <button onclick="checkAnswer('ex23', 'have been trying', 'feedback23')">Check</button>
+    <p id="feedback23" class="feedback"></p>
+</div>
+
+<!-- Exercise 24 -->
+<div class="exercise">
+    <p>24. While I <select id="ex24">
+        <option value="">--Choose--</option>
+        <option value="was cooking">was cooking</option>
+        <option value="am cooking">am cooking</option>
+        <option value="have cooked">have cooked</option>
+        <option value="had cooked">had cooked</option>
+        <option value="will cook">will cook</option>
+        <option value="had been cooking">had been cooking</option>
+        <option value="cook">cook</option>
+        <option value="will have cooked">will have cooked</option>
+    </select>, my friend was watching TV.</p>
+    <button onclick="checkAnswer('ex24', 'was cooking', 'feedback24')">Check</button>
+    <p id="feedback24" class="feedback"></p>
+</div>
+
+<!-- Exercise 25 -->
+<div class="exercise">
+    <p>25. By the time we arrived, they <select id="ex25">
+        <option value="">--Choose--</option>
+        <option value="had already eaten">had already eaten</option>
+        <option value="will eat">will eat</option>
+        <option value="are eating">are eating</option>
+        <option value="ate">ate</option>
+        <option value="will have eaten">will have eaten</option>
+        <option value="eat">eat</option>
+        <option value="have eaten">have eaten</option>
+        <option value="had been eating">had been eating</option>
+    </select> lunch.</p>
+    <button onclick="checkAnswer('ex25', 'had already eaten', 'feedback25')">Check</button>
+    <p id="feedback25" class="feedback"></p>
+</div>
+
+<!-- Exercise 26 -->
+<div class="exercise">
+    <p>26. She <select id="ex26">
+        <option value="">--Choose--</option>
+        <option value="has worked">has worked</option>
+        <option value="worked">worked</option>
+        <option value="will work">will work</option>
+        <option value="is working">is working</option>
+        <option value="was working">was working</option>
+        <option value="had worked">had worked</option>
+        <option value="has been working">has been working</option>
+        <option value="will have worked">will have worked</option>
+    </select> at this company for 5 years when she decides to leave.</p>
+    <button onclick="checkAnswer('ex26', 'has worked', 'feedback26')">Check</button>
+    <p id="feedback26" class="feedback"></p>
+</div>
+
+<!-- Exercise 27 -->
+<div class="exercise">
+    <p>27. I <select id="ex27">
+        <option value="">--Choose--</option>
+        <option value="have studied">have studied</option>
+        <option value="had studied">had studied</option>
+        <option value="study">study</option>
+        <option value="studied">studied</option>
+        <option value="will study">will study</option>
+        <option value="am studying">am studying</option>
+        <option value="will have studied">will have studied</option>
+        <option value="had been studying">had been studying</option>
+    </select> for the test all week.</p>
+    <button onclick="checkAnswer('ex27', 'have studied', 'feedback27')">Check</button>
+    <p id="feedback27" class="feedback"></p>
+</div>
+
+<!-- Exercise 28 -->
+<div class="exercise">
+    <p>28. He <select id="ex28">
+        <option value="">--Choose--</option>
+        <option value="has been writing">has been writing</option>
+        <option value="had been writing">had been writing</option>
+        <option value="is writing">is writing</option>
+        <option value="was writing">was writing</option>
+        <option value="will write">will write</option>
+        <option value="writes">writes</option>
+        <option value="had written">had written</option>
+        <option value="will have written">will have written</option>
+    </select> for three hours when his phone rang.</p>
+    <button onclick="checkAnswer('ex28', 'had been writing', 'feedback28')">Check</button>
+    <p id="feedback28" class="feedback"></p>
+</div>
+
+<!-- Exercise 29 -->
+<div class="exercise">
+    <p>29. By the time we finish, they <select id="ex29">
+        <option value="">--Choose--</option>
+        <option value="will have finished">will have finished</option>
+        <option value="finish">finish</option>
+        <option value="finished">finished</option>
+        <option value="have finished">have finished</option>
+        <option value="had finished">had finished</option>
+        <option value="will be finishing">will be finishing</option>
+        <option value="are finishing">are finishing</option>
+        <option value="will have been finishing">will have been finishing</option>
+    </select> their homework.</p>
+    <button onclick="checkAnswer('ex29', 'will have finished', 'feedback29')">Check</button>
+    <p id="feedback29" class="feedback"></p>
+</div>
+
+<!-- Exercise 30 -->
+<div class="exercise">
+    <p>30. We <select id="ex30">
+        <option value="">--Choose--</option>
+        <option value="had worked">had worked</option>
+        <option value="were working">were working</option>
+        <option value="worked">worked</option>
+        <option value="have worked">have worked</option>
+        <option value="will have worked">will have worked</option>
+        <option value="work">work</option>
+        <option value="are working">are working</option>
+        <option value="will work">will work</option>
+    </select> hard when we received the good news.</p>
+    <button onclick="checkAnswer('ex30', 'had worked', 'feedback30')">Check</button>
+    <p id="feedback30" class="feedback"></p>
+</div>
+
+<!-- Exercise 31 -->
+<div class="exercise">
+    <p>31. By the time you arrive, I <select id="ex31">
+        <option value="">--Choose--</option>
+        <option value="will have been studying">will have been studying</option>
+        <option value="had been studying">had been studying</option>
+        <option value="am studying">am studying</option>
+        <option value="have studied">have studied</option>
+        <option value="will study">will study</option>
+        <option value="study">study</option>
+        <option value="will have studied">will have studied</option>
+        <option value="had studied">had studied</option>
+    </select> for 3 hours.</p>
+    <button onclick="checkAnswer('ex31', 'will have been studying', 'feedback31')">Check</button>
+    <p id="feedback31" class="feedback"></p>
+</div>
+
+<!-- Exercise 32 -->
+<div class="exercise">
+    <p>32. He <select id="ex32">
+        <option value="">--Choose--</option>
+        <option value="will travel">will travel</option>
+        <option value="has traveled">has traveled</option>
+        <option value="travel">travel</option>
+        <option value="is traveling">is traveling</option>
+        <option value="was traveling">was traveling</option>
+        <option value="will have traveled">will have traveled</option>
+        <option value="had traveled">had traveled</option>
+        <option value="had been traveling">had been traveling</option>
+    </select> to Japan next year.</p>
+    <button onclick="checkAnswer('ex32', 'will travel', 'feedback32')">Check</button>
+    <p id="feedback32" class="feedback"></p>
+</div>
+
+<!-- Exercise 33 -->
+<div class="exercise">
+    <p>33. She <select id="ex33">
+        <option value="">--Choose--</option>
+        <option value="has finished">has finished</option>
+        <option value="will finish">will finish</option>
+        <option value="finishes">finishes</option>
+        <option value="had finished">had finished</option>
+        <option value="is finishing">is finishing</option>
+        <option value="will have finished">will have finished</option>
+        <option value="finished">finished</option>
+        <option value="had been finishing">had been finishing</option>
+    </select> the report already.</p>
+    <button onclick="checkAnswer('ex33', 'has finished', 'feedback33')">Check</button>
+    <p id="feedback33" class="feedback"></p>
+</div>
+
+<!-- Exercise 34 -->
+<div class="exercise">
+    <p>34. When I arrived at the airport, they <select id="ex34">
+        <option value="">--Choose--</option>
+        <option value="had already boarded">had already boarded</option>
+        <option value="will board">will board</option>
+        <option value="boarded">boarded</option>
+        <option value="are boarding">are boarding</option>
+        <option value="will have boarded">will have boarded</option>
+        <option value="have boarded">have boarded</option>
+        <option value="had been boarding">had been boarding</option>
+        <option value="is boarding">is boarding</option>
+    </select> the flight.</p>
+    <button onclick="checkAnswer('ex34', 'had already boarded', 'feedback34')">Check</button>
+    <p id="feedback34" class="feedback"></p>
+</div>
+
+<!-- Exercise 35 -->
+<div class="exercise">
+    <p>35. I <select id="ex35">
+        <option value="">--Choose--</option>
+        <option value="have been waiting">have been waiting</option>
+        <option value="had been waiting">had been waiting</option>
+        <option value="waited">waited</option>
+        <option value="am waiting">am waiting</option>
+        <option value="will wait">will wait</option>
+        <option value="will have waited">will have waited</option>
+        <option value="had waited">had waited</option>
+        <option value="will be waiting">will be waiting</option>
+    </select> for you for 30 minutes when you finally showed up.</p>
+    <button onclick="checkAnswer('ex35', 'have been waiting', 'feedback35')">Check</button>
+    <p id="feedback35" class="feedback"></p>
+</div>
+
+<!-- Exercise 36 -->
+<div class="exercise">
+    <p>36. By the time we get there, the meeting <select id="ex36">
+        <option value="">--Choose--</option>
+        <option value="will have ended">will have ended</option>
+        <option value="will end">will end</option>
+        <option value="ended">ended</option>
+        <option value="have ended">have ended</option>
+        <option value="had ended">had ended</option>
+        <option value="is ending">is ending</option>
+        <option value="was ending">was ending</option>
+        <option value="will have been ending">will have been ending</option>
+    </select>.</p>
+    <button onclick="checkAnswer('ex36', 'will have ended', 'feedback36')">Check</button>
+    <p id="feedback36" class="feedback"></p>
+</div>
+
+<!-- Exercise 37 -->
+<div class="exercise">
+    <p>37. They <select id="ex37">
+        <option value="">--Choose--</option>
+        <option value="had been talking">had been talking</option>
+        <option value="talked">talked</option>
+        <option value="are talking">are talking</option>
+        <option value="have talked">have talked</option>
+        <option value="will talk">will talk</option>
+        <option value="talk">talk</option>
+        <option value="were talking">were talking</option>
+        <option value="will have talked">will have talked</option>
+    </select> about their plans when I joined the conversation.</p>
+    <button onclick="checkAnswer('ex37', 'had been talking', 'feedback37')">Check</button>
+    <p id="feedback37" class="feedback"></p>
+</div>
+
+<!-- Exercise 38 -->
+<div class="exercise">
+    <p>38. I <select id="ex38">
+        <option value="">--Choose--</option>
+        <option value="had read">had read</option>
+        <option value="am reading">am reading</option>
+        <option value="will read">will read</option>
+        <option value="read">read</option>
+        <option value="have read">have read</option>
+        <option value="is reading">is reading</option>
+        <option value="had been reading">had been reading</option>
+        <option value="will have read">will have read</option>
+    </select> the book before the class started.</p>
+    <button onclick="checkAnswer('ex38', 'had read', 'feedback38')">Check</button>
+    <p id="feedback38" class="feedback"></p>
+</div>
+
+<!-- Exercise 39 -->
+<div class="exercise">
+    <p>39. By this time next week, I <select id="ex39">
+        <option value="">--Choose--</option>
+        <option value="will have finished">will have finished</option>
+        <option value="finish">finish</option>
+        <option value="finished">finished</option>
+        <option value="will finish">will finish</option>
+        <option value="have finished">have finished</option>
+        <option value="had finished">had finished</option>
+        <option value="will have been finishing">will have been finishing</option>
+        <option value="was finishing">was finishing</option>
+    </select> the project.</p>
+    <button onclick="checkAnswer('ex39', 'will have finished', 'feedback39')">Check</button>
+    <p id="feedback39" class="feedback"></p>
+</div>
+
+<!-- Exercise 40 -->
+<div class="exercise">
+    <p>40. She <select id="ex40">
+        <option value="">--Choose--</option>
+        <option value="had been studying">had been studying</option>
+        <option value="studies">studies</option>
+        <option value="is studying">is studying</option>
+        <option value="had studied">had studied</option>
+        <option value="was studying">was studying</option>
+        <option value="have studied">have studied</option>
+        <option value="will be studying">will be studying</option>
+        <option value="will have studied">will have studied</option>
+    </select> for two hours when the phone rang.</p>
+    <button onclick="checkAnswer('ex40', 'had been studying', 'feedback40')">Check</button>
+    <p id="feedback40" class="feedback"></p>
+</div>
+
+<!-- Exercise 41 -->
+<div class="exercise">
+    <p>41. By the time we finish dinner, the guests <select id="ex41">
+        <option value="">--Choose--</option>
+        <option value="will have left">will have left</option>
+        <option value="leave">leave</option>
+        <option value="have left">have left</option>
+        <option value="had left">had left</option>
+        <option value="were leaving">were leaving</option>
+        <option value="will leave">will leave</option>
+        <option value="left">left</option>
+        <option value="will have been leaving">will have been leaving</option>
+    </select> the party.</p>
+    <button onclick="checkAnswer('ex41', 'will have left', 'feedback41')">Check</button>
+    <p id="feedback41" class="feedback"></p>
+</div>
+
+<!-- Exercise 42 -->
+<div class="exercise">
+    <p>42. He <select id="ex42">
+        <option value="">--Choose--</option>
+        <option value="will have written">will have written</option>
+        <option value="wrote">wrote</option>
+        <option value="has written">has written</option>
+        <option value="is writing">is writing</option>
+        <option value="was writing">was writing</option>
+        <option value="writes">writes</option>
+        <option value="will write">will write</option>
+        <option value="had written">had written</option>
+    </select> the letter by tomorrow.</p>
+    <button onclick="checkAnswer('ex42', 'will have written', 'feedback42')">Check</button>
+    <p id="feedback42" class="feedback"></p>
+</div>
+
+<!-- Exercise 43 -->
+<div class="exercise">
+    <p>43. I <select id="ex43">
+        <option value="">--Choose--</option>
+        <option value="was reading">was reading</option>
+        <option value="had read">had read</option>
+        <option value="have read">have read</option>
+        <option value="read">read</option>
+        <option value="am reading">am reading</option>
+        <option value="will read">will read</option>
+        <option value="is reading">is reading</option>
+        <option value="will have read">will have read</option>
+    </select> the article when you called me.</p>
+    <button onclick="checkAnswer('ex43', 'was reading', 'feedback43')">Check</button>
+    <p id="feedback43" class="feedback"></p>
+</div>
+
+<!-- Exercise 44 -->
+<div class="exercise">
+    <p>44. They <select id="ex44">
+        <option value="">--Choose--</option>
+        <option value="have been working">have been working</option>
+        <option value="had been working">had been working</option>
+        <option value="were working">were working</option>
+        <option value="work">work</option>
+        <option value="worked">worked</option>
+        <option value="is working">is working</option>
+        <option value="had worked">had worked</option>
+        <option value="will have worked">will have worked</option>
+    </select> at this company for five years.</p>
+    <button onclick="checkAnswer('ex44', 'have been working', 'feedback44')">Check</button>
+    <p id="feedback44" class="feedback"></p>
+</div>
+
+<!-- Exercise 45 -->
+<div class="exercise">
+    <p>45. By the time I finish this report, I <select id="ex45">
+        <option value="">--Choose--</option>
+        <option value="will have been writing">will have been writing</option>
+        <option value="had written">had written</option>
+        <option value="will write">will write</option>
+        <option value="write">write</option>
+        <option value="have written">have written</option>
+        <option value="will have written">will have written</option>
+        <option value="will have been writing">will have been writing</option>
+        <option value="was writing">was writing</option>
+    </select> for 3 hours.</p>
+    <button onclick="checkAnswer('ex45', 'will have been writing', 'feedback45')">Check</button>
+    <p id="feedback45" class="feedback"></p>
+</div>
+
+<!-- Exercise 46 -->
+<div class="exercise">
+    <p>46. When I was younger, I <select id="ex46">
+        <option value="">--Choose--</option>
+        <option value="used to study">used to study</option>
+        <option value="study">study</option>
+        <option value="was studying">was studying</option>
+        <option value="had studied">had studied</option>
+        <option value="am studying">am studying</option>
+        <option value="will study">will study</option>
+        <option value="will have studied">will have studied</option>
+        <option value="studied">studied</option>
+    </select> every night.</p>
+    <button onclick="checkAnswer('ex46', 'used to study', 'feedback46')">Check</button>
+    <p id="feedback46" class="feedback"></p>
+</div>
+
+<!-- Exercise 47 -->
+<div class="exercise">
+    <p>47. By this time tomorrow, we <select id="ex47">
+        <option value="">--Choose--</option>
+        <option value="will have completed">will have completed</option>
+        <option value="have completed">have completed</option>
+        <option value="will complete">will complete</option>
+        <option value="completed">completed</option>
+        <option value="will have been completing">will have been completing</option>
+        <option value="complete">complete</option>
+        <option value="had completed">had completed</option>
+        <option value="were completing">were completing</option>
+    </select> the assignment.</p>
+    <button onclick="checkAnswer('ex47', 'will have completed', 'feedback47')">Check</button>
+    <p id="feedback47" class="feedback"></p>
+</div>
+
+<!-- Exercise 48 -->
+<div class="exercise">
+    <p>48. I <select id="ex48">
+        <option value="">--Choose--</option>
+        <option value="will be working">will be working</option>
+        <option value="was working">was working</option>
+        <option value="have been working">have been working</option>
+        <option value="am working">am working</option>
+        <option value="had worked">had worked</option>
+        <option value="will have worked">will have worked</option>
+        <option value="worked">worked</option>
+        <option value="is working">is working</option>
+    </select> on the project tomorrow.</p>
+    <button onclick="checkAnswer('ex48', 'will be working', 'feedback48')">Check</button>
+    <p id="feedback48" class="feedback"></p>
+</div>
+
+<!-- Exercise 49 -->
+<div class="exercise">
+    <p>49. By the time she arrives, we <select id="ex49">
+        <option value="">--Choose--</option>
+        <option value="will have left">will have left</option>
+        <option value="left">left</option>
+        <option value="had left">had left</option>
+        <option value="have left">have left</option>
+        <option value="will leave">will leave</option>
+        <option value="were leaving">were leaving</option>
+        <option value="is leaving">is leaving</option>
+        <option value="will have been leaving">will have been leaving</option>
+    </select> the party.</p>
+    <button onclick="checkAnswer('ex49', 'will have left', 'feedback49')">Check</button>
+    <p id="feedback49" class="feedback"></p>
+</div>
+
+<!-- Exercise 50 -->
+<div class="exercise">
+    <p>50. I <select id="ex50">
+        <option value="">--Choose--</option>
+        <option value="will be staying">will be staying</option>
+        <option value="have stayed">have stayed</option>
+        <option value="stay">stay</option>
+        <option value="am staying">am staying</option>
+        <option value="had stayed">had stayed</option>
+        <option value="will stay">will stay</option>
+        <option value="had been staying">had been staying</option>
+        <option value="will have stayed">will have stayed</option>
+    </select> at my friend's house next weekend.</p>
+    <button onclick="checkAnswer('ex50', 'will be staying', 'feedback50')">Check</button>
+    <p id="feedback50" class="feedback"></p>
+</div>
+
+
+
+    <script>
+        function checkAnswer(exerciseId, correctAnswer, feedbackId) {
+            const userAnswer = document.getElementById(exerciseId).value;
+            const feedback = document.getElementById(feedbackId);
+            if (userAnswer === correctAnswer) {
+                feedback.textContent = "Correct!";
+                feedback.classList.remove("incorrect");
+                feedback.classList.add("correct");
+            } else {
+                feedback.textContent = `Incorrect. The correct answer is "${correctAnswer}".`;
+                feedback.classList.remove("correct");
+                feedback.classList.add("incorrect");
+            }
+        }
+    </script>
+
+</body>
+</html>
